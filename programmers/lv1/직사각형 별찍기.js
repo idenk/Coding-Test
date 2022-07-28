@@ -9,6 +9,6 @@ process.stdin.on('data', (data) => {
     for (let j = 0; j < a; j++) {
       star += '*';
     }
-    console.log(star);
+    console.log(star);  // console.log는 자동 개행되므로 문자열로 저장하여 한 줄씩 출력
   }
 });

@@ -16,8 +16,9 @@ console.log(solution(arr));
 
 // function solution(arr) {
 //   let answer,
-//     min = Number.MAX_SAFE_INTEGER;   //* 최솟값을 구할 때는 가장 큰 숫자로 초기화 해두는 것도 좋음
+//     min = Number.MAX_SAFE_INTEGER;   //* 최솟값을 구할 때는 가장 큰 숫자로 초기화해두는 것 권장
 //* 또는 배열의 첫번째 수로 초기화하는 방법도 존재
+//? MAX_SAFE_INTEGER: JavaScript에서 안전한 최대 정수값 (2^53 - 1)
 //   for (let i = 0; i < arr.length; i++) {
 //     if (arr[i] < min) min = arr[i];
 //   }
