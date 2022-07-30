@@ -13,7 +13,7 @@ console.log(solution(str));
 //     let answer = '';
 //     for (let x of s) {
 //       let num = x.charCodeAt();
-//* String.fromCharCode: 아스키 코드를 문자로 변경
+//* String.fromCharCode: 아스키 코드를 문자열로 변경
 //       if (num >= 97 && num <= 122) answer += String.fromCharCode(num - 32);
 //       else answer += x;
 
