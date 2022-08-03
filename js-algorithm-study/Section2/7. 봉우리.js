@@ -45,7 +45,7 @@ console.log(solution(arr));
 //       for (let k = 0; k < 4; k++) {
 //         let nx = i + dx[k]; // 인덱스 상하우좌 순으로 조정
 //         let ny = j + dy[k];
-//         // 인덱스가 배열의 크기를 넘어서는 안되므로 배열에 참조하기 전에 인덱스 범위 지정
+//         //* 인덱스가 배열의 크기를 넘어서는 안되므로, 참조하기 전에 인덱스 범위 지정
 //         if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
 //           flag = 0;
 //           break;

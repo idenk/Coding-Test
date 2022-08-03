@@ -29,6 +29,9 @@ function solution(arr) {
   return answer;
 }
 
+// 2중 for문을 돌며 각 행의 합, 각 열의 합, 두 대각선의 합을 구하고
+// 가장 큰 값을 출력
+
 let arr = [
   [10, 13, 10, 12, 15],
   [12, 39, 30, 23, 11],
@@ -38,9 +41,7 @@ let arr = [
 ];
 console.log(solution(arr));
 
-// 2중 for문을 돌며 각 행의 합, 각 열의 합, 두 대각선의 합을 구하고
-// 가장 큰 값을 출력
-
+// 해설
 // function solution(arr) {
 //   let answer = Number.MIN_SAFE_INTEGER;
 //   let n = arr.length;

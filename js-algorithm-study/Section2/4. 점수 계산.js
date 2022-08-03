@@ -16,11 +16,11 @@ function solution(arr) {
   return answer;
 }
 
-let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
-console.log(solution(arr));
-
 // 배열의 값이 1이면 count 누적.
 // 배열의 값이 0이고, count가 0이 아니라면 1부터 count까지의 합을 answer에 더함
+
+let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+console.log(solution(arr));
 
 // 해설
 // function solution(arr) {

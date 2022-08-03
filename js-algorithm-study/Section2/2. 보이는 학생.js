@@ -12,11 +12,11 @@ function solution(arr) {
   return answer;
 }
 
-let arr = [130, 135, 148, 140, 145, 150, 150, 153];
-console.log(solution(arr));
-
 // 배열을 순회
 // max 값이 바뀔 때 카운팅
+
+let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+console.log(solution(arr));
 
 //해설
 // function solution(arr) {

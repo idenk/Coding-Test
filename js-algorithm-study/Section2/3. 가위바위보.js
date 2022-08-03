@@ -12,13 +12,13 @@ function solution(a, b) {
   return answer;
 }
 
-let a = [2, 3, 3, 1, 3];
-let b = [1, 1, 2, 2, 3];
-console.log(solution(a, b));
-
 // 숫자가 크면 승. 예외) 3과 1
 // 숫자가 동일하면 비김
 // a를 기준으로 비교하며 저장
+
+let a = [2, 3, 3, 1, 3];
+let b = [1, 1, 2, 2, 3];
+console.log(solution(a, b));
 
 //해설: A가 이기는 경우만 판별. 나머지 경우는 B 승
 // function solution(a, b) {
