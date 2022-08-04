@@ -21,6 +21,7 @@ function solution(s) {
 let str = 'found7, time: study; Yduts; emit, 7Dnuof';
 console.log(solution(str));
 
+// 해설
 // function solution(s) {
 //   let answer = 'YES';
 //   //* 정규식 사용: 알파벳을 제외한 나머지 문자를 빈문자열로 변경
