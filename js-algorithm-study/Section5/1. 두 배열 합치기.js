@@ -27,13 +27,13 @@ let b = [2, 3, 6, 7, 9];
 console.log(solution(a, b));
 
 //* sort 함수만 호출해도 -> O(nlogn)
-// 해설: 투 포인터스 알고리즘(Two pointers algorithm) -> O(n + m)
+// 해설: 투 포인터 알고리즘(Two pointers algorithm) -> O(n + m)
 function solution(arr1, arr2) {
   let answer = [];
   let n = arr1.length;
   let m = arr2.length;
   let p1 = (p2 = 0);
-  while (p1 < n && p2 < m) {
+  while (p1 < n && p2 < m) {  // 둘 중에 한 포인터만 도달해도 반복 중지
     if (arr1[p1] <= arr2[p2]) answer.push(arr1[p1++]);
     else answer.push(arr2[p2++]);
   }
