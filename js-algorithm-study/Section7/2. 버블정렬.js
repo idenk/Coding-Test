@@ -1,15 +1,14 @@
 function solution(arr) {
-  let swapFlag = 0;
   for (let i = 0; i < arr.length - 1; i++) {
-    swapFlag = 0;
-    for (let j = 0; j < arr.length - i - 1; j++) {
+    let isSorted = true;
+    for (let j = 0; j < arr.length - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-        swapFlag = 1;
+        isSorted = false;
       }
     }
     // console.log(arr);
-    if (!swapFlag) break; // 교체된 요소가 없다면 이미 정렬된 배열
+    if (isSorted) break; // 교체된 요소가 없다면 이미 정렬된 배열
   }
   return arr;
 }
