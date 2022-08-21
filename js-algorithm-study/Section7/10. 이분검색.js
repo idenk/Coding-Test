@@ -14,7 +14,7 @@ function solution(target, arr) {
     }
 
     if (arr[mid] > target) min = mid + 1; // 범위를 오른쪽 파티션으로 좁힘
-    else max = mid - 1;
+    else max = mid - 1; // arr[mid] < target
   }
 
   return answer + 1;
