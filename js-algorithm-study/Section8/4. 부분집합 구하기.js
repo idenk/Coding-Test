@@ -1,7 +1,6 @@
 function solution(n) {
   const answer = [];
-  let el = 1;
-  const arr = Array.from({ length: n }, () => el++);
+  const arr = Array.from({ length: n }, (v, i) => i + 1);
 
   function pickOrNot(idx, bucket) {
     if (idx === arr.length) {
@@ -21,27 +20,27 @@ function solution(n) {
 console.log(solution(3));
 
 //! 해설
-function solution(n) {
-  let answer = [];
-  let ch = Array.from({ length: n + 1 }, () => 0); // 체크 배열. n번까지 인덱스가 생겨야 하므로 n+1
-  function DFS(L) {
-    if (L === n + 1) {
-      // n + 1이 되었을 때 종료
-      let tmp = '';
-      for (let i = 1; i <= n; i++) {
-        if (ch[i] === 1) tmp += i + ' ';
-      }
-      if (tmp.length > 0) answer.push(tmp.trim()); // trim: 문자열 앞, 뒤의 공백을 제거
-    } else {
-      ch[L] = 1; // 원소 포함 O
-      DFS(L + 1);
-      ch[L] = 0; // 원소 포험 X
-      DFS(L + 1);
-    }
-  }
-  DFS(1);
-  return answer;
-}
+// function solution(n) {
+//   let answer = [];
+//   let ch = Array.from({ length: n + 1 }, () => 0); // 체크 배열. n번까지 인덱스가 생겨야 하므로 n+1
+//   function DFS(L) {
+//     if (L === n + 1) {
+//       // n + 1이 되었을 때 종료
+//       let tmp = '';
+//       for (let i = 1; i <= n; i++) {
+//         if (ch[i] === 1) tmp += i + ' ';
+//       }
+//       if (tmp.length > 0) answer.push(tmp.trim()); // trim: 문자열 앞, 뒤의 공백을 제거
+//     } else {
+//       ch[L] = 1; // 원소 포함 O
+//       DFS(L + 1);
+//       ch[L] = 0; // 원소 포험 X
+//       DFS(L + 1);
+//     }
+//   }
+//   DFS(1);
+//   return answer;
+// }
 
 //                       D(1)
 //*            o/                   x\      2를 포함하는 경우, 포함하지 않는 경우
