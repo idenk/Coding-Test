@@ -1,39 +1,35 @@
-//! wip
 function solution(tickets) {
-  // 인접 리스트 생성
-  const adjList = {};
-
-  tickets.forEach((el) => {
-    if (!adjList[el[0]]) {
-      adjList[el[0]] = [];
-      adjList[el[0]].push(el[1]);
-    } else {
-      adjList[el[0]].push(el[1]);
-    }
-  });
+  const path = [];
+  const len = tickets.length; // 항공권의 개수
+  const isUsed = new Array(len).fill(false);  // 항공권 사용 여부
 
   tickets.sort();
-  console.log(tickets);
 
-  const isVisited = [];
+  function dfs(v, count) {
+    path.push(v); // 공항 방문
 
-  dfs(adjList, 'ICN', isVisited);
+    if (count === len) return true; // 모든 항공권을 사용
 
-  return isVisited;
+    for (let i = 0; i < len; i++) {
+      // 사용한 항공권이 아님 && 현재 공항에서 사용할 수 있는 항공권
+      if (!isUsed[i] && tickets[i][0] === v) {
+        isUsed[i] = true;
+        // 목적지로 출발하며 사용 개수 + 1
+        if (dfs(tickets[i][1], count + 1)) return true;
+        // 길이 없음 -> for문 이어서 순회
+        isUsed[i] = false;
+      }
+    }
+
+    // 모든 티켓을 사용하지 못 한 경우
+    // -> 잘못된 경로이므로 이전으로 돌아가 다시 다른 항공권 사용
+    path.pop();
+    return false;
+  }
+
+  dfs('ICN', 0);
+  return path;
 }
-
-// function dfs(adjList, airport, isVisited, count) {
-//   isVisited.push(airport);
-
-//   if (!adjList[airport]) return;
-//   if ()
-
-//   for (let i = 0; i < adjList[airport].length; i++) {
-//     // if (!isVisited.includes(adjList[airport][i])) {
-//       dfs(adjList, adjList[airport][i], isVisited, count);
-//     // }
-//   }
-// }
 
 let tickets = [
   ['ICN', 'SFO'],
@@ -45,3 +41,6 @@ let tickets = [
 
 const result = solution(tickets);
 console.log(result);
+
+// ICN 공항에서 출발하여 모든 티켓을 사용
+// 가능한 경로가 2개 이상일 때 알파벳 순서로 결정 -> 정렬
