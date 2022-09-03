@@ -25,12 +25,12 @@ function solution(N, number) {
 
 console.log(solution(5, 12));
 
-// dp[j]: j-1개만큼 N을 사용했을 때 만들 수 있는 숫자의 집합
+// dp[j]: j개만큼 N을 사용했을 때 만들 수 있는 숫자의 집합
 
 // 사칙연산과 숫자를 붙이는 경우 모두를 포함해야 함
 // N이 1개인 경우 dp[1]: N
-// N이 2개인 경우 dp[2]: NN, N+N, N-N, N*N, N/N
-// N이 3개인 경우 dp[3]: NNN, dp[1]과 dp[2]의 사칙연산 + dp[1]과 dp[1]의 사칙연산
+// N이 2개인 경우 dp[2]: NN, N+N, N-N, N*N, N/N (dp[1]과 dp[1]의 사칙연산)
+// N이 3개인 경우 dp[3]: NNN, dp[1]과 dp[2]의 사칙연산 + dp[2]과 dp[1]의 사칙연산
 
 // 2중 for문 i=1 ~ 9, j=i ~ i-1
 // dp[j]와 dp[i-j]의 연산값을 dp[i]에 저장 ->
@@ -42,4 +42,4 @@ console.log(solution(5, 12));
 // i 4, j 3: dp[4] += dp[3],dp[1]의 사칙연산
 // ... 반복
 
-// 이 과정에서 dp[i]에 number가 발견되면 종료, N이 최소 개수임을 보장
+// 이 과정에서 dp[i]에 number가 발견되면 종료, N이 i개일 때 최소 개수임을 보장
