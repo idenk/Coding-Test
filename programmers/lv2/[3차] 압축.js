@@ -10,7 +10,7 @@ function solution(msg) {
     idx += str.length;
 
     answer.push(dIdx);
-    console.log('dictionary',dictionary)
+    console.log("dictionary", dictionary);
   }
 
   return answer;
